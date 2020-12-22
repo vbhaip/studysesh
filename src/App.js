@@ -2,6 +2,12 @@ import logo from './logo.svg';
 import './App.css';
 import EnterTasks from './EnterTasks'
 import Dashboard from './Dashboard'
+import Results from './Results'
+import { createMuiTheme } from '@material-ui/core/styles';
+import { ThemeProvider } from '@material-ui/core/styles';
+import { withTheme } from '@material-ui/core/styles';
+ 
+
 
 import {
   BrowserRouter as Router,
@@ -10,8 +16,36 @@ import {
   Link
 } from "react-router-dom";
 
+
+
+
+const theme = createMuiTheme({
+  palette: {
+    primary: {
+      main: '#4357ad',
+    },
+    secondary: {
+      main: '#48a9a6',
+    },
+    error: {
+    	main: '#c1666b'
+    },
+    warning: {
+    	main: '#d4b843'
+    },
+    black: {
+    	main: '#020202'
+    }
+  },
+  typography: {
+  	fontFamily: "'Lato'"
+  }
+});
+
+
 function App() {
 	return (
+		<ThemeProvider theme={theme}>
 		<Router>
 		{
 	//	<div className="App">
@@ -39,9 +73,13 @@ function App() {
 				<Route path="/dashboard">
 					<Dashboard/>
 				</Route>
+				<Route path="/results">
+					<Results/>
+				</Route>
 			</Switch>
 		</Router>
+		</ThemeProvider>
 	);
 }
 
-export default App;
+export default withTheme(App);

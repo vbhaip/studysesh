@@ -40,7 +40,7 @@ class Task extends React.Component{
 		return (
 			<div className="task">
 				<TextField id="standard-basic" label="Task" onChange={this.handleTextFieldLabelChange}/>
-				<TextField id="standard-basic" label="Minutes" onChange={this.handleTextFieldMinChange}/>
+				<TextField id="standard-basic" label="Minutes" type="number" onChange={this.handleTextFieldMinChange}/>
 			</div>
 		);
 	}

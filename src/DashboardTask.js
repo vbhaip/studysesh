@@ -1,5 +1,6 @@
 import React from 'react'
 import Checkbox from '@material-ui/core/Checkbox';
+import { withTheme } from '@material-ui/core/styles';
 
 
 class DashboardTask extends React.Component{
@@ -14,9 +15,9 @@ class DashboardTask extends React.Component{
 		this.state = {
 			status: 0,
 			checked: false,
-			color: 'primary'
+			color: 'black'
 		}
-
+		// console.log(this.props)
 		this.changeState = this.changeState.bind(this);
 	}
 
@@ -31,23 +32,24 @@ class DashboardTask extends React.Component{
 		if(newStatus == 0){
 			this.setState({
 				checked: false,
-				color: 'primary'
+				color: this.props.theme.palette.black.main
 			});
 		}
 
 		else if(newStatus == 1){
 			this.setState({
 				checked: true,
-				color: 'primary'
+				color: this.props.theme.palette.warning.main
 			});
 		}
 
 		else if(newStatus == 2){
 			this.setState({
 				checked: true,
-				color: 'secondary'
+				color: this.props.theme.palette.secondary.main
 			});
 		}
+		// console.log(this.props.theme.palette.primary.light)
 
 		this.props.update(newStatus, this.props.identifier);
 
@@ -58,11 +60,11 @@ class DashboardTask extends React.Component{
 	render(){
 		return (
 			<div className="dashboardtask">
-				<Checkbox value="checkbox" inputProps={{ 'aria-label': 'Checkbox A' }} color={this.state.color} checked={this.state.checked} onChange={this.changeState}/>
-				<span>{this.props.tasklabel} ({this.props.taskmin} min)</span>
+				<Checkbox size="medium" value="checkbox" inputProps={{ 'aria-label': 'Checkbox A' }} style={{color: this.state.color, transform: "scale(1.2)"}} checked={this.state.checked} onChange={this.changeState}/>
+				<span style={{"font-size": "2.5vh", "padding-top": "20vh"}}>{this.props.tasklabel}<span style={{color: this.props.theme.palette.primary.light}}> ({this.props.taskmin} min)</span></span>
 			</div>
 		);
 	}
 }
 
-export default DashboardTask;
+export default withTheme(DashboardTask);

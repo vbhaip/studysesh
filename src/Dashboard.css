@@ -1,0 +1,17 @@
+#dashboardbottom{
+	text-align: center;
+}
+
+#dashboardbottom svg{
+	margin-bottom: 2vh
+}
+
+.dboardclock {
+	text-align: center
+}
+
+.notes {
+	margin-right: 5vw;
+	float: right;
+	width: 40vw;
+}

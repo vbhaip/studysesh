@@ -1,5 +1,7 @@
 import React from 'react'
 import * as d3 from 'd3'
+import { withTheme } from '@material-ui/core/styles';
+
 
 class DashboardProgress extends React.Component {
 
@@ -24,6 +26,8 @@ class DashboardProgress extends React.Component {
 		this.countOccurrence = this.countOccurrence.bind(this);
 
 		this.updateWidthsBasedOffTaskStatuses = this.updateWidthsBasedOffTaskStatuses.bind(this);
+
+
 	}
 
 	// updateWidths()
@@ -86,11 +90,16 @@ class DashboardProgress extends React.Component {
 		console.log(this.state.nswidth);
 
 		d3.select("#dboard-progress")
+			.attr("width", this.props.width)
+			.attr("height", "5vw")
+
+
+		d3.select("#dboard-progress")
 			.append("rect")
 			.attr("id", "done")
 			.attr("width", this.state.dwidth)
 			.attr("height", "5vw")
-			.style("fill", "green")
+			.style("fill", this.props.theme.palette.secondary.main)
 			.attr("x", 0)
 
 		d3.select("#dboard-progress")
@@ -98,7 +107,7 @@ class DashboardProgress extends React.Component {
 			.attr("id", "wip")
 			.attr("width", this.state.wipwidth)
 			.attr("height", "5vw")
-			.style("fill", "yellow")
+			.style("fill", this.props.theme.palette.warning.main)
 			.attr("x", this.state.dwidth)
 		
 		d3.select("#dboard-progress")
@@ -106,10 +115,11 @@ class DashboardProgress extends React.Component {
 			.attr("id", "notstarted")
 			.attr("width", this.state.nswidth)
 			.attr("height", "5vw")
-			.style("fill", "red")
+			.style("fill", this.props.theme.palette.error.main)
 			.attr("x", this.state.dwidth+this.state.wipwidth)
 		
 
+		this.update();
 
 	}
 
@@ -125,4 +135,4 @@ class DashboardProgress extends React.Component {
 
 }
 
-export default DashboardProgress;
+export default withTheme(DashboardProgress);

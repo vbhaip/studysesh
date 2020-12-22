@@ -1,0 +1,16 @@
+#resultlinechartcontainer {
+	float: left;
+	width: 50vw;
+	/*background-color: green;*/
+}
+
+#resulttotaltimecontainer {
+	float: right;
+	width: 50vw;
+	/*background-color: yellow;*/
+	font-size: 8vh;
+	text-align: center;
+	height: 50vh;
+	padding-top: 25vh;
+	/*padding-bottom: 15vh;*/
+}
