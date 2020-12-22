@@ -122,7 +122,7 @@ class Dashboard extends React.Component{
 				<DashboardClock/>
 
 				<div style={{height: "70vh",}}>
-					<div style={{float: "left", "margin-left": "2vw"}}>
+					<div style={{float: "left", "marginLeft": "2vw"}}>
 						{items}
 					</div>
 

@@ -18,6 +18,7 @@ class Results extends React.Component {
 		const endtask = window.sessionStorage.getItem("endtask").split(',');
 
 		let realtasktimes = [];
+		let startedtasks = [];
 
 
 		const sessiontime = parseInt(window.sessionStorage.getItem("timemarker"));
@@ -25,14 +26,16 @@ class Results extends React.Component {
 		this.sessiontime = sessiontime;
 
 		for(let i = 0; i < tasktimes.length; i++){
-			if(starttask[i] !== 'null'){
+			if(!isNaN(starttask[i]) && starttask[i] !== ''){
 
-				if(endtask[i] === 'null'){
-					realtasktimes.push(sessiontime - parseInt(tasktimes[i]))
+				if(isNaN(endtask[i]) || endtask[i] === ''){
+					realtasktimes.push(sessiontime - parseInt(starttask[i]))
 				}
 				else{
 					realtasktimes.push(parseInt(endtask[i]) - parseInt(starttask[i]))
 				}
+
+				startedtasks.push(tasks[i])
 
 			}
 		}
@@ -48,7 +51,8 @@ class Results extends React.Component {
 			starttask: starttask,
 			endtask: endtask,
 			realtasktimes: realtasktimes,
-			width: window.innerWidth
+			width: window.innerWidth,
+			startedtasks: startedtasks
 		}
 
 
@@ -75,9 +79,11 @@ class Results extends React.Component {
 				</div>
 
 
-				<ResultPieChart title="Ideal" box={this.state.width*.2} data={this.state.tasktimes} labels={this.state.tasks} reactid="projected-pie"/>
-				<ResultPieChart title="Actual" box={this.state.width*.2} data={this.state.realtasktimes} labels={this.state.tasks} reactid="real-pie"/>
-				<DashboardProgress width={this.state.width*.8} taskstatuses={taskstatuses}/>
+				<ResultPieChart style={{'marginLeft': this.state.width*1}} title="Ideal" box={this.state.width*.15} data={this.state.tasktimes} labels={this.state.tasks} reactid="projected-pie"/>
+				<ResultPieChart title="Actual" box={this.state.width*.15} data={this.state.realtasktimes} labels={this.state.startedtasks} reactid="real-pie"/>
+				<div id="resultprogresscontainer">
+					<DashboardProgress width={this.state.width*.4} taskstatuses={taskstatuses}/>
+				</div>
 			</div>
 		)
 	}

@@ -61,7 +61,7 @@ class DashboardTask extends React.Component{
 		return (
 			<div className="dashboardtask">
 				<Checkbox size="medium" value="checkbox" inputProps={{ 'aria-label': 'Checkbox A' }} style={{color: this.state.color, transform: "scale(1.2)"}} checked={this.state.checked} onChange={this.changeState}/>
-				<span style={{"font-size": "2.5vh", "padding-top": "20vh"}}>{this.props.tasklabel}<span style={{color: this.props.theme.palette.primary.light}}> ({this.props.taskmin} min)</span></span>
+				<span style={{"fontSize": "2.5vh", "paddingTop": "20vh"}}>{this.props.tasklabel}<span style={{color: this.props.theme.palette.primary.light}}> ({this.props.taskmin} min)</span></span>
 			</div>
 		);
 	}

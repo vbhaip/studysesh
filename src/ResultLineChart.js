@@ -11,11 +11,24 @@ class ResultLineChart extends React.Component {
 		this.width = this.props.width;
 
 		let marginamt = this.props.width*.2
-		this.margin = {top: marginamt, bottom: marginamt, left: marginamt, right: marginamt}
+		this.margin = {top: marginamt, bottom: marginamt, left: marginamt/2, right: marginamt}
 
-		this.start = this.props.start.map((x) => parseInt(x));
-		this.end = this.props.end.map((x) => parseInt(x));
-		this.times = this.props.times.map((x) => parseInt(x));
+		let start = this.props.start.map((x) => parseInt(x));
+		let end = this.props.end.map((x) => parseInt(x));
+		let times = this.props.times.map((x) => parseInt(x));
+
+
+		for(let i = start.length; i--; i >= 0){
+			if(isNaN(start[i]) || isNaN(end[i])){
+				start.splice(i, 1);
+				end.splice(i, 1);
+				times.splice(i, 1);
+			}
+		}
+
+		this.start = start;
+		this.end = end;
+		this.times = times;
 
 		//this pairs up intervals so that the start is always before
 		this.end.sort((a,b) => this.start.indexOf(a) - this.start.indexOf(b));
@@ -87,7 +100,7 @@ class ResultLineChart extends React.Component {
 		//goal is to find how much we've added to from our last critpoint
 		let cume = 0
 		for(let j = 0; j < this.start.length; j++){
-			if(this.start[j] < thresh){
+			if(this.start[j] <= thresh){
 				//calculate ratio of how much of the interval we finished and multiply by projected time, points value
 
 				if(this.end[j] === this.start[j]){
@@ -113,17 +126,18 @@ class ResultLineChart extends React.Component {
 			this.points.push([this.critpoints[i], this.calcGraphPointVal(this.critpoints[i])])
 		}
 
-		// console.log(this.points)
+		console.log(this.points)
 
 		//should show flat line till end of session
-		this.points.push([this.sessiontime, this.points[this.points.length - 1][1]])
-
-		// console.log(this.points)
+		if(this.points.length > 0){
+			this.points.push([this.sessiontime, this.points[this.points.length - 1][1]])
+		}
+		console.log(this.points)
 
 		//start from beginning
 		this.points.unshift([0,0])
 
-		// console.log(this.points)
+		console.log(this.points)
 
 		// this.x = this.critpoints;
 
@@ -135,15 +149,23 @@ class ResultLineChart extends React.Component {
 			.attr("width", this.width)
 			.attr("height", this.height)
 
-		this.svg.append("g")
+		const xAxis = this.svg.append("g")
 		    .attr("class", "x axis")
 		    .attr("transform", "translate(0," + (this.height-this.margin.bottom)+ ")")
 		    .call(d3.axisBottom(this.xScale).ticks(3));
 
-		this.svg.append("g")
+		const yAxis = this.svg.append("g")
 		    .attr("class", "y axis")
 		    .attr("transform", "translate(" + this.margin.left + ",0)")
 		    .call(d3.axisLeft(this.yScale).ticks(3));
+
+
+		xAxis.select('path')
+  			.style('stroke-width', '3px');
+
+  		yAxis.select('path')
+  			.style('stroke-width', '3px');
+
 
 
 		const line = d3.line()

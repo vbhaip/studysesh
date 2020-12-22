@@ -15,8 +15,8 @@ class ResultPiChart extends React.Component {
 		console.log(arcs);
 
 
-		const width = 300;
-		const height = 300;
+		// const width = 300;
+		// const height = 300;
 
 		this.box = this.props.box;
 
@@ -27,6 +27,7 @@ class ResultPiChart extends React.Component {
 			.attr("height", this.props.box)
 			.append("g")
 			.attr("transform", 'translate(' + this.props.box/2  + ', ' + this.props.box/2 + ')')
+			.style("fill", "orange")
 
 			.attr("stroke", "white")
 			.selectAll("path")
@@ -42,7 +43,7 @@ class ResultPiChart extends React.Component {
 	          	console.log(d);
 	          	console.log(this.props.labels)
 	          	svg.append("text")
-	            .attr("y", this.box/10)
+	            .attr("y", this.box*8/10)
 	            .attr("x", this.box/2)
 	            // .attr("dominant-baseline", "central") 
 

@@ -43,7 +43,7 @@ class DashboardClock extends React.Component {
 	render(){
 		return (
 
-			<h2 class="dboardclock">
+			<h2 className="dboardclock">
 			{("0" + this.state.hours).slice(-2)}:{("0" + this.state.minutes).slice(-2)}
 			</h2>
 

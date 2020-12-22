@@ -1,7 +1,7 @@
 #resultlinechartcontainer {
 	float: left;
 	width: 50vw;
-	/*background-color: green;*/
+	/*background-color: orange;*/
 }
 
 #resulttotaltimecontainer {
@@ -10,7 +10,21 @@
 	/*background-color: yellow;*/
 	font-size: 8vh;
 	text-align: center;
-	height: 50vh;
+	/*height: 50vh;*/
 	padding-top: 25vh;
 	/*padding-bottom: 15vh;*/
+}
+
+#result-top {
+	height: 70vh;
+	/*background-color: green;*/
+}
+
+#resultprogresscontainer {
+	float: right;
+	width: 40vw;
+	text-align: center;
+	padding-top: 12vh;
+	padding-right: 5vw;
+	/*margin: 20vh;*/
 }
