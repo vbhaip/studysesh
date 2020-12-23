@@ -1,5 +1,7 @@
 Speedrun tasks to get work done faster
 
+Check out the project live [here](https://vinaybhaip.com/studysesh).
+
 <!--
 # Getting Started with Create React App
 
