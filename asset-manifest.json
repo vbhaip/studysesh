@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/studysesh/static/css/main.fc728f2a.chunk.css",
-    "main.js": "/studysesh/static/js/main.3a6157d6.chunk.js",
-    "main.js.map": "/studysesh/static/js/main.3a6157d6.chunk.js.map",
+    "main.js": "/studysesh/static/js/main.5102b4e7.chunk.js",
+    "main.js.map": "/studysesh/static/js/main.5102b4e7.chunk.js.map",
     "runtime-main.js": "/studysesh/static/js/runtime-main.7d606b76.js",
     "runtime-main.js.map": "/studysesh/static/js/runtime-main.7d606b76.js.map",
     "static/js/2.0d61d45a.chunk.js": "/studysesh/static/js/2.0d61d45a.chunk.js",
@@ -18,6 +18,6 @@
     "static/js/runtime-main.7d606b76.js",
     "static/js/2.0d61d45a.chunk.js",
     "static/css/main.fc728f2a.chunk.css",
-    "static/js/main.3a6157d6.chunk.js"
+    "static/js/main.5102b4e7.chunk.js"
   ]
 }
