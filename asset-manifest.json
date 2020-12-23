@@ -1,23 +1,23 @@
 {
   "files": {
     "main.css": "/studysesh/static/css/main.fc728f2a.chunk.css",
-    "main.js": "/studysesh/static/js/main.b673b658.chunk.js",
-    "main.js.map": "/studysesh/static/js/main.b673b658.chunk.js.map",
+    "main.js": "/studysesh/static/js/main.3a6157d6.chunk.js",
+    "main.js.map": "/studysesh/static/js/main.3a6157d6.chunk.js.map",
     "runtime-main.js": "/studysesh/static/js/runtime-main.7d606b76.js",
     "runtime-main.js.map": "/studysesh/static/js/runtime-main.7d606b76.js.map",
-    "static/js/2.610f66c9.chunk.js": "/studysesh/static/js/2.610f66c9.chunk.js",
-    "static/js/2.610f66c9.chunk.js.map": "/studysesh/static/js/2.610f66c9.chunk.js.map",
+    "static/js/2.0d61d45a.chunk.js": "/studysesh/static/js/2.0d61d45a.chunk.js",
+    "static/js/2.0d61d45a.chunk.js.map": "/studysesh/static/js/2.0d61d45a.chunk.js.map",
     "static/js/3.39a85158.chunk.js": "/studysesh/static/js/3.39a85158.chunk.js",
     "static/js/3.39a85158.chunk.js.map": "/studysesh/static/js/3.39a85158.chunk.js.map",
     "index.html": "/studysesh/index.html",
     "static/css/main.fc728f2a.chunk.css.map": "/studysesh/static/css/main.fc728f2a.chunk.css.map",
-    "static/js/2.610f66c9.chunk.js.LICENSE.txt": "/studysesh/static/js/2.610f66c9.chunk.js.LICENSE.txt",
+    "static/js/2.0d61d45a.chunk.js.LICENSE.txt": "/studysesh/static/js/2.0d61d45a.chunk.js.LICENSE.txt",
     "static/media/logo.6ce24c58.svg": "/studysesh/static/media/logo.6ce24c58.svg"
   },
   "entrypoints": [
     "static/js/runtime-main.7d606b76.js",
-    "static/js/2.610f66c9.chunk.js",
+    "static/js/2.0d61d45a.chunk.js",
     "static/css/main.fc728f2a.chunk.css",
-    "static/js/main.b673b658.chunk.js"
+    "static/js/main.3a6157d6.chunk.js"
   ]
 }
