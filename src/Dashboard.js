@@ -135,7 +135,7 @@ class Dashboard extends React.Component{
 				<div id="dashboardbottom">
 					<DashboardProgress width={this.state.width} taskstatuses={this.state.taskstatuses} id="dboardprog"/>
 					<br/>
-					<Button variant="contained" color="primary" href="results">
+					<Button variant="contained" color="primary" href="#results">
 						Done
 					</Button>
 				</div>

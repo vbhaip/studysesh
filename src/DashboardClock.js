@@ -19,7 +19,7 @@ class DashboardClock extends React.Component {
 	}
 
 	componentDidMount(){
-		this.interval = setInterval(this.updateTime, 1000)
+		this.interval = setInterval(this.updateTime, 1000*60)
 	}
 
 	componentWillUnmount(){

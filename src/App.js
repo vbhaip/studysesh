@@ -10,7 +10,7 @@ import { withTheme } from '@material-ui/core/styles';
 
 
 import {
-  BrowserRouter as Router,
+  HashRouter as Router,
   Switch,
   Route,
   Link
@@ -46,7 +46,7 @@ const theme = createMuiTheme({
 function App() {
 	return (
 		<ThemeProvider theme={theme}>
-		<Router>
+		<Router basename="/">
 		{
 	//	<div className="App">
 	//	  <header className="App-header">
@@ -70,10 +70,10 @@ function App() {
 				<Route exact path="/">
 					<EnterTasks/>
 				</Route>
-				<Route path="/dashboard">
+				<Route exact path="/dashboard">
 					<Dashboard/>
 				</Route>
-				<Route path="/results">
+				<Route exact path="/results">
 					<Results/>
 				</Route>
 			</Switch>

@@ -16,7 +16,7 @@ class EnterTasks extends React.Component{
 				<h1 style={{"font-family": this.props.theme.typography.fontFamily,
 				 "color": this.props.theme.palette.primary.main}}>Enter tasks</h1>
 				<TaskContainer itemCount={5}/>
-				<Button variant="contained" color="primary" href="dashboard">
+				<Button variant="contained" color="primary" href="#dashboard">
 					Done
 				</Button>
 			</div>
