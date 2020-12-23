@@ -5,10 +5,6 @@ import { withTheme } from '@material-ui/core/styles';
 
 class ResultPiChart extends React.Component {
 
-	constructor(props){
-		super(props);
-	}
-
 	componentDidMount(){
 		console.log(this.props.data);
 		const arcs = d3.pie()(this.props.data);

@@ -1,4 +1,3 @@
-import logo from './logo.svg';
 import './App.css';
 import EnterTasks from './EnterTasks'
 import Dashboard from './Dashboard'

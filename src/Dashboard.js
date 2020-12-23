@@ -1,12 +1,10 @@
 import React from 'react'
 import Button from '@material-ui/core/Button';
 import DashboardTask from './DashboardTask.js'
-import TaskContainer from './TaskContainer'
 import DashboardProgress from './DashboardProgress'
 import DashboardClock from './DashboardClock'
 import TextField from '@material-ui/core/TextField';
 
-import { useTheme } from "@material-ui/core/styles";
 import { withTheme } from '@material-ui/core/styles';
 
 import './Dashboard.css'
@@ -126,7 +124,7 @@ class Dashboard extends React.Component{
 						{items}
 					</div>
 
-					<div class="notes">
+					<div className="notes">
 						<TextField style={{width: "40vw"}} label="Notes" multiline={true} variant="outlined" rows={20} rowsMax={20}/>
 					</div>
 				</div>

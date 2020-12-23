@@ -1,6 +1,5 @@
 import React from 'react'
 import Task from './Task'
-import Icon from '@material-ui/core/Icon';
 import IconButton from '@material-ui/core/IconButton';
 import AddBoxIcon from '@material-ui/icons/AddBox';
 
@@ -50,7 +49,7 @@ class TaskContainer extends React.Component{
 
 	updateTaskContainer(data, key, type) {
 
-		if(type == 'label'){
+		if(type === 'label'){
 			this.setState(prevState => {
 			    const newItems = [...prevState.tasks];
 			    newItems[key] = data;
@@ -60,7 +59,7 @@ class TaskContainer extends React.Component{
 
 		}
 
-		if(type == 'time'){
+		if(type === 'time'){
 			this.setState(prevState => {
 			    const newItems = [...prevState.tasktimes];
 			    newItems[key] = data;

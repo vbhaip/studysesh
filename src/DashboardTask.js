@@ -29,21 +29,21 @@ class DashboardTask extends React.Component{
 			status: newStatus
 		});
 
-		if(newStatus == 0){
+		if(newStatus === 0){
 			this.setState({
 				checked: false,
 				color: this.props.theme.palette.black.main
 			});
 		}
 
-		else if(newStatus == 1){
+		else if(newStatus === 1){
 			this.setState({
 				checked: true,
 				color: this.props.theme.palette.warning.main
 			});
 		}
 
-		else if(newStatus == 2){
+		else if(newStatus === 2){
 			this.setState({
 				checked: true,
 				color: this.props.theme.palette.secondary.main
